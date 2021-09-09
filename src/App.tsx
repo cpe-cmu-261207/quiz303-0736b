@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Post from './components/Post'
 import Comments from './components/Comments'
-import {comments, CommentType} from './data/comments'
+import {comments} from './data/comments'
 
 function App() {
 
@@ -14,8 +14,9 @@ function App() {
 
 
         <Post />
-
-        <Comments data={comments}/>
+  
+        {comments.map(item => <Comments username={item.username} userImagePath={item.userImagePath} commentText={item.commentText}
+        likeNum={item.likeNum} replies={item.replies} />)}
             
         
 
